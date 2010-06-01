@@ -16,3 +16,4 @@ _ReSharper.*
 ~$*
 *.tmp
 *.eprj
+build/*

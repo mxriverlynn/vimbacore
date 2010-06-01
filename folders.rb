@@ -8,8 +8,8 @@ root_folder = File.expand_path(File.dirname(__FILE__))
 }
 
 @commands = {
-  nunit = File.join(@folders[:nunit], "nunit-console.exe"),
-  msbuild = File.join(@folders[:net35], "msbuild.exe")
+  :nunit => File.join(@folders[:nunit], "nunit-console.exe"),
+  :csc => File.join(@folders[:net35], "csc.exe")
 }
 
 @files = {

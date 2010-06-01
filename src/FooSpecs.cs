@@ -1,4 +1,4 @@
-using Nunit.Framework;
+using NUnit.Framework;
 using System;
 
 [TestFixture]

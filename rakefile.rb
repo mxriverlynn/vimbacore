@@ -3,7 +3,7 @@ gem 'albacore', '=0.2.0.pre1'
 require 'albacore'
 require 'folders'
 
-task :default => [:setup, :build, :test]
+task :default => [:setup, :build, :build_tests, :test]
 
 Albacore::log_level = :verbose
 
@@ -15,13 +15,20 @@ end
 
 csc :build do |csc|
   csc.command = @commands[:csc]
-  csc.compile FileList["src/**/*.cs"]
+  csc.compile FileList["src/**/*.cs"].exclude("src/**/*Specs.cs")
   csc.output = @files[:output]
   csc.target = :library
-  csc.references @files[:nunitframework]
+end
+
+csc :build_tests do |csc|
+  csc.command = @commands[:csc]
+  csc.compile FileList["src/**/*Specs.cs"]
+  csc.output = @files[:testdll]
+  csc.target = :library
+  csc.references @files[:output], @files[:nunitframework]
 end
 
 nunit :test do |nunit|
   nunit.command = @commands[:nunit]
-  nunit.assemblies @files[:output]
+  nunit.assemblies @files[:testdll]
 end

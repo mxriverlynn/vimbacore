@@ -15,5 +15,6 @@ root_folder = File.expand_path(File.dirname(__FILE__))
 
 @files = {
   :output => File.join(@folders[:outdir], "myproject.dll"),
+  :testdll => File.join(@folders[:outdir], "myproject.specs.dll"),
   :nunitframework => File.join(@folders[:nunit], "nunit.framework.dll")
 }

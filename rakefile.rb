@@ -8,7 +8,8 @@ task :default => [:setup, :build, :test]
 Albacore::log_level = :verbose
 
 task :setup do
-  FileUtils.mkdir @folders[:outdir] unless File.exist?(@folders[:outdir])
+  FileUtils.rmtree @folders[:outdir] if File.exist?(@folders[:outdir])
+  FileUtils.mkdir @folders[:outdir] 
   FileUtils.cp(@files[:nunitframework], @folders[:outdir])
 end
 

@@ -17,3 +17,4 @@ _ReSharper.*
 *.tmp
 *.eprj
 build/*
+TestResult.xml

@@ -1,4 +1,5 @@
 root_folder = File.expand_path(File.dirname(__FILE__))
+
 @folders = {
   :root => root_folder,
   :outdir => File.join(root_folder, "build"),

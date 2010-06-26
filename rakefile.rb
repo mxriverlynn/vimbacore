@@ -7,6 +7,7 @@ task :default => [:setup, :build, :build_tests, :test]
 
 Albacore.configure do |config|
   config.csc.use :net35
+  config.nunit.command = @commands[:nunit]
 end
 
 task :setup do
@@ -29,6 +30,5 @@ csc :build_tests do |csc|
 end
 
 nunit :test do |nunit|
-  nunit.command = @commands[:nunit]
   nunit.assemblies @files[:testdll]
 end

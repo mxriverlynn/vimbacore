@@ -4,13 +4,11 @@ root_folder = File.expand_path(File.dirname(__FILE__))
   :root => root_folder,
   :outdir => File.join(root_folder, "build"),
   :tools => File.join(root_folder, "tools"),
-  :nunit => File.join(root_folder, "tools", "nunit"),
-  :net35 => "C:\\Windows\\Microsoft.NET\\framework\\v3.5"
+  :nunit => File.join(root_folder, "tools", "nunit")
 }
 
 @commands = {
-  :nunit => File.join(@folders[:nunit], "nunit-console.exe"),
-  :csc => File.join(@folders[:net35], "csc.exe")
+  :nunit => File.join(@folders[:nunit], "nunit-console.exe")
 }
 
 @files = {

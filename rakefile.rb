@@ -1,5 +1,5 @@
 require 'rubygems'
-gem 'albacore', '=0.2.0.pre1'
+gem 'albacore', '=0.2.0.preview1'
 require 'albacore'
 require 'folders'
 

@@ -18,3 +18,4 @@ _ReSharper.*
 *.eprj
 build/*
 TestResult.xml
+src/assemblyinfo.cs

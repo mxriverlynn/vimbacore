@@ -1,0 +1,13 @@
+﻿<?xml version="1.0"?>
+<configuration>
+	<!-- other settings here-->
+
+	<appSettings>
+    <add key="MySetting" value="<%=mysetting%>" />
+	</appSettings>
+	
+	<connectionStrings>
+    <add name="MyDB" connectionString="<%=connectionstring%>" />
+	</connectionStrings>
+	<!-- other settings here-->
+</configuration>

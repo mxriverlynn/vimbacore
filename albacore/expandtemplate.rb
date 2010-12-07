@@ -1,7 +1,13 @@
 require 'erb'
 
 class ExpandTemplate
-  include AlbacoreTask
+  module GetBinding
+    def get_binding
+      binding
+    end
+  end
+
+  include Albacore::Task
 
   attr_accessor :template, :output
   attr_hash :settings
@@ -14,7 +20,8 @@ class ExpandTemplate
     template = File.read template_file
 
     vars = OpenStruct.new(settings)
-    vars_binding = vars.send(:binding)
+    vars.extend GetBinding
+    vars_binding = vars.get_binding
 
     erb = ERB.new template
     output = erb.result(vars_binding)

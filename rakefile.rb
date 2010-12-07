@@ -1,7 +1,9 @@
+$: << "./"
+
 require 'rubygems'
-gem 'albacore', '=0.2.0.preview2'
 require 'albacore'
 require 'folders'
+
 
 FileList["albacore/*.rb"].each { |f| require f }
 
